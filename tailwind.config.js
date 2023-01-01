@@ -9,6 +9,9 @@ module.exports = {
   theme: {
     extend: {
       borderWidth: n1_100,
+      fontFamily: {
+        nanum: ['NanumBrush'],
+      },
     },
   },
   plugins: [],

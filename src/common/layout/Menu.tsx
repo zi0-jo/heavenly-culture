@@ -3,7 +3,7 @@ import { useData } from 'common/context/data';
 import { Link } from 'react-router-dom';
 
 export default function Menu() {
-  const data = useData();
+  const { data } = useData();
 
   return (
     <ul className="text-center md:text-left [&>*]:my-2">

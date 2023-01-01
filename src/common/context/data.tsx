@@ -4,6 +4,7 @@ import { Department } from 'common/type';
 import {
   createContext,
   PropsWithChildren,
+  useCallback,
   useContext,
   useEffect,
   useState,
@@ -41,7 +42,18 @@ export default function DataProvider({ children }: PropsWithChildren<{}>) {
 
 export const useData = () => {
   const { data } = useContext(DataContext);
-  return data;
+
+  const getContentById = useCallback(
+    (id: string) => {
+      return data?.find(item => item.id === id);
+    },
+    [data],
+  );
+
+  return {
+    data,
+    getContentById,
+  };
 };
 
 export const getData = (): Promise<Department[]> => {

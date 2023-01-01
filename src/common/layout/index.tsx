@@ -7,9 +7,11 @@ export default function Layout({ children }: PropsWithChildren<{}>) {
   const { authorized } = useAuth();
   return (
     <DataProvider>
-      <main className="relative flex h-screen flex-col items-center justify-center bg-black text-white md:flex-row md:p-20">
+      <main className="relative flex h-full flex-col items-center justify-center bg-black text-white md:flex-row md:p-20">
         {authorized && <Header />}
-        <div className="flex w-full flex-1 justify-center">{children}</div>
+        <div className="flex w-full flex-1 justify-center px-10 md:ml-[40px]">
+          {children}
+        </div>
       </main>
     </DataProvider>
   );
