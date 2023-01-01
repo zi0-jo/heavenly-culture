@@ -1,10 +1,12 @@
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useState } from 'react';
 import Menu from './Menu';
 
 export default function Header() {
-  const [opened, setOpened] = useState<boolean>(true);
+  const { id } = useParams();
+  const [opened, setOpened] = useState<boolean>(!!id);
 
   return (
     <div className="z-1 flex w-full flex-col items-center md:w-auto md:items-start">
