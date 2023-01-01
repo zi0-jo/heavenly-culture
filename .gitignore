@@ -20,7 +20,7 @@
 .env.production.local
 
 #etc
-/data.json
+/src/data.ts
 
 npm-debug.log*
 yarn-debug.log*

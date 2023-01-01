@@ -19,7 +19,7 @@ export default function Auth() {
 
   return (
     <div>
-      <Input onChange={handleChangeCode} />
+      <Input onChange={handleChangeCode} placeholder="코드 입력" />
       <Button className="ml-2" onClick={submit}>
         입력
       </Button>

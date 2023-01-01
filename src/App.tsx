@@ -1,12 +1,28 @@
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Auth from 'auth';
 import Layout from 'common/layout';
 import { useAuth } from 'common/context/auth';
+import Content from 'content/container';
+// import { encriptData } from './data';
+// encriptData();
 
 function App() {
   const { authorized } = useAuth();
 
-  return <Layout>{authorized ? <div>컨텐츠</div> : <Auth />}</Layout>;
+  return (
+    <Router basename={'/heavenly-culture'}>
+      <Layout>
+        {authorized ? (
+          <Routes>
+            <Route path="/:id" element={<Content />} />
+          </Routes>
+        ) : (
+          <Auth />
+        )}
+      </Layout>
+    </Router>
+  );
 }
 
 export default App;
