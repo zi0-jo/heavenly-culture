@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/heavenly-culture/static/css/main.073c9b0a.css",
+    "main.js": "/heavenly-culture/static/js/main.8e97fde0.js",
+    "index.html": "/heavenly-culture/index.html",
+    "main.073c9b0a.css.map": "/heavenly-culture/static/css/main.073c9b0a.css.map",
+    "main.8e97fde0.js.map": "/heavenly-culture/static/js/main.8e97fde0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.8e97fde0.js"
+  ]
+}
