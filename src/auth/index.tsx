@@ -18,11 +18,15 @@ export default function Auth() {
   };
 
   return (
-    <div className="flex items-center">
-      <Input onChange={handleChangeCode} placeholder="코드 입력" />
-      <Button className="ml-2 shrink-0" onClick={submit}>
+    <form className="flex items-center" onSubmit={submit}>
+      <Input
+        className="shrink"
+        onChange={handleChangeCode}
+        placeholder="코드 입력"
+      />
+      <Button className="ml-2 shrink-0" type="submit">
         입력
       </Button>
-    </div>
+    </form>
   );
 }

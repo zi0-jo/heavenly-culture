@@ -1,15 +1,17 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Menu from './Menu';
 
 export default function Header() {
-  const { id } = useParams();
-  const [opened, setOpened] = useState<boolean>(!!id);
+  const [opened, setOpened] = useState<boolean>(false);
 
   return (
-    <div className="z-1 flex w-full flex-col items-center md:w-auto md:items-start">
+    <div
+      className={`fixed inset-0 flex w-full flex-col items-center px-4 md:static md:w-auto md:items-start md:px-10 ${
+        opened ? 'z-30 h-full md:z-0' : ''
+      }`}
+    >
       <div className="flex h-[45px] w-full items-center justify-between">
         <button
           className="order-1 flex h-full w-[50px] items-center justify-center md:hidden"
@@ -23,7 +25,7 @@ export default function Header() {
         </header>
       </div>
       <div
-        className={`fixed inset-0 mt-[45px] h-full w-full bg-black md:static md:block md:pt-0 ${
+        className={`w-full flex-1 bg-black md:block md:pt-0 ${
           opened ? '' : 'hidden'
         }`}
       >

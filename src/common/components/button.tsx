@@ -1,8 +1,8 @@
-import { HTMLAttributes } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
-type Variant = 'primary';
+type Variant = 'primary' | 'secondary';
 
-interface Props extends HTMLAttributes<HTMLButtonElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: Variant;
 }
 
@@ -21,4 +21,5 @@ export default function Button({
 
 const VARIANTS: { [key in Variant]: string } = {
   primary: 'border-2',
+  secondary: 'bg-black text-white',
 };

@@ -3,4 +3,6 @@ export interface Department {
   name: string;
   bio: string;
   description: string;
+  formUrl: string;
+  phone?: string;
 }
