@@ -5,4 +5,5 @@ export interface Department {
   description: string;
   formUrl: string;
   phone?: string;
+  images?: string[];
 }

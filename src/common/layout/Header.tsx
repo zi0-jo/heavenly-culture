@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <div
       className={`fixed inset-0 flex w-full flex-col items-center px-4 md:static md:w-auto md:items-start md:px-10 ${
-        opened ? 'z-30 h-full md:z-0' : ''
+        opened ? 'z-30 h-full bg-black md:z-0' : ''
       }`}
     >
       <div className="flex h-[45px] w-full items-center justify-between">
@@ -25,9 +25,7 @@ export default function Header() {
         </header>
       </div>
       <div
-        className={`w-full flex-1 bg-black md:block md:pt-0 ${
-          opened ? '' : 'hidden'
-        }`}
+        className={`w-full flex-1 md:block md:pt-0 ${opened ? '' : 'hidden'}`}
       >
         <Menu onSelect={() => setOpened(false)} />
       </div>

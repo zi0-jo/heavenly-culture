@@ -15,9 +15,20 @@ export default function Content() {
   }, [id, getContentById]);
 
   return content ? (
-    <div className="w-full overflow-y-scroll px-5 md:px-10">
-      <Intro {...content} className="min-h-screen" />
-      <Footer {...content} />
+    <div
+      className={'w-full overflow-y-scroll bg-cover bg-center bg-no-repeat'}
+      style={
+        content.images
+          ? {
+              backgroundImage: `url('images/${content.id}/${content.images?.[0]}')`,
+            }
+          : {}
+      }
+    >
+      <div className="bg-black/40 px-5 md:px-10">
+        <Intro {...content} className="min-h-screen" />
+        <Footer {...content} />
+      </div>
     </div>
   ) : null;
 }

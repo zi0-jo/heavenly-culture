@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import './App.css';
 import Auth from 'auth';
 import Layout from 'common/layout';
 import { useAuth } from 'common/context/auth';
