@@ -12,12 +12,16 @@ function App() {
 
   return (
     <Router basename={process.env.PUBLIC_URL}>
-      <Layout>
-        <Routes>
-          <Route path="/:id" element={authorized ? <Content /> : <Auth />} />
-          <Route path="*" element={authorized ? <Content /> : <Auth />} />
-        </Routes>
-      </Layout>
+      <Routes>
+        <Route
+          path="/:id"
+          element={<Layout>{authorized ? <Content /> : <Auth />}</Layout>}
+        />
+        <Route
+          path="*"
+          element={<Layout>{authorized ? <Content /> : <Auth />}</Layout>}
+        />
+      </Routes>
     </Router>
   );
 }
