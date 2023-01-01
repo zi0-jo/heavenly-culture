@@ -13,12 +13,12 @@ export default function Button({
 }: Props) {
   return (
     <button
-      className={`px-8 py-2 rounded-full ${VARIANTS[variant]} ${className}`}
+      className={`rounded-full px-8 py-2 text-sm font-bold ${VARIANTS[variant]} ${className}`}
       {...props}
     />
   );
 }
 
 const VARIANTS: { [key in Variant]: string } = {
-  primary: 'text-white bg-black',
+  primary: 'border-2',
 };

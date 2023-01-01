@@ -7,31 +7,26 @@ export default function Header() {
   const [opened, setOpened] = useState<boolean>(true);
 
   return (
-    <>
-      <div className="fixed flex h-screen w-full flex-col items-center bg-white md:static md:w-auto md:items-start">
-        {!opened && (
-          <button
-            className="absolute left-0 top-0 p-3 md:hidden"
-            onClick={() => setOpened(!opened)}
-          >
-            <FontAwesomeIcon icon={faBars} />
-          </button>
-        )}
-        <header className="px-8 py-2 text-xl font-bold">
-          마태지파 문화부 인재모집
+    <div className="z-1 flex w-full flex-col items-center md:w-auto md:items-start">
+      <div className="flex h-[45px] w-full items-center justify-between">
+        <button
+          className="order-1 flex h-full w-[50px] items-center justify-center md:hidden"
+          onClick={() => setOpened(!opened)}
+        >
+          <FontAwesomeIcon icon={opened ? faXmark : faBars} />
+        </button>
+        <div className="order-3 w-[50px] md:hidden" />
+        <header className="order-2 text-xl font-bold">
+          마태지파 하늘 문화부
         </header>
-        {opened && (
-          <div className="h-full w-screen md:w-auto">
-            <button
-              className="absolute right-0 top-0 p-3 md:hidden"
-              onClick={() => setOpened(false)}
-            >
-              <FontAwesomeIcon icon={faXmark} />
-            </button>
-            <Menu />
-          </div>
-        )}
       </div>
-    </>
+      <div
+        className={`fixed inset-0 mt-[45px] h-full w-full bg-black md:static md:block md:pt-0 ${
+          opened ? '' : 'hidden'
+        }`}
+      >
+        <Menu />
+      </div>
+    </div>
   );
 }
