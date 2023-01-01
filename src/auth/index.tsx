@@ -1,7 +1,7 @@
 import { ChangeEvent, useState } from 'react';
-import Button from 'common/components/button';
 import { useAuth } from 'common/context/auth';
-import Input from 'common/components/input';
+import Button from 'common/components/Button';
+import Input from 'common/components/Input';
 
 export default function Auth() {
   const { authorize } = useAuth();
