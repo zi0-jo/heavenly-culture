@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/heavenly-culture/static/css/main.a43a22c7.css",
-    "main.js": "/heavenly-culture/static/js/main.d9debe7e.js",
+    "main.js": "/heavenly-culture/static/js/main.d36776de.js",
     "index.html": "/heavenly-culture/index.html",
     "main.a43a22c7.css.map": "/heavenly-culture/static/css/main.a43a22c7.css.map",
-    "main.d9debe7e.js.map": "/heavenly-culture/static/js/main.d9debe7e.js.map"
+    "main.d36776de.js.map": "/heavenly-culture/static/js/main.d36776de.js.map"
   },
   "entrypoints": [
     "static/css/main.a43a22c7.css",
-    "static/js/main.d9debe7e.js"
+    "static/js/main.d36776de.js"
   ]
 }
