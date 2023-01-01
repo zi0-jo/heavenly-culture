@@ -11,7 +11,7 @@ function App() {
   const { authorized } = useAuth();
 
   return (
-    <Router basename={'/heavenly-culture'}>
+    <Router basename={process.env.PUBLIC_URL}>
       <Layout>
         {authorized ? (
           <Routes>

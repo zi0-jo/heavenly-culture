@@ -25,7 +25,7 @@ export default function Header() {
           opened ? '' : 'hidden'
         }`}
       >
-        <Menu />
+        <Menu onSelect={() => setOpened(false)} />
       </div>
     </div>
   );
