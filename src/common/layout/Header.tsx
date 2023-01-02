@@ -8,13 +8,13 @@ export default function Header() {
 
   return (
     <div
-      className={`fixed inset-0 flex w-full flex-col items-center px-4 md:static md:w-auto md:items-start md:px-10 ${
+      className={`fixed top-0 left-0 flex w-full flex-col items-center md:static md:w-auto md:items-start  ${
         opened ? 'z-30 h-full bg-black md:z-0' : ''
       }`}
     >
-      <div className="flex h-[45px] w-full items-center justify-between">
+      <div className="flex h-[45px] w-full items-center justify-between bg-black/50 px-4 md:bg-transparent md:px-10">
         <button
-          className="order-1 flex h-full w-[50px] items-center justify-center md:hidden"
+          className="order-1 flex w-[50px] items-center justify-center md:hidden"
           onClick={() => setOpened(!opened)}
         >
           <FontAwesomeIcon icon={opened ? faXmark : faBars} />

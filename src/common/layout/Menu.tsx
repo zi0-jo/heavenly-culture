@@ -11,7 +11,7 @@ export default function Menu({ onSelect }: Props) {
   const { id } = useParams();
 
   return (
-    <ul className="text-center md:text-left [&>*]:my-2">
+    <ul className="text-center md:ml-[40px] md:text-left [&>*]:my-2">
       {data?.map((dep, index) => {
         const selected = (!id && index === 0) || id === dep.id;
         return (

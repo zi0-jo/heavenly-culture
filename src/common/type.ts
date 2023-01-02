@@ -6,4 +6,5 @@ export interface Department {
   formUrl: string;
   phone?: string;
   images?: string[];
+  teams?: Array<{ name: string; description: string }>;
 }
