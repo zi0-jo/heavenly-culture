@@ -15,7 +15,7 @@ export default function Condition({ condition, className }: Props) {
   }, []);
   return (
     <div
-      className={`flex w-full items-start justify-center ${className}`}
+      className={`flex w-full flex-col items-start justify-center md:flex-row ${className}`}
       id="condition-section"
     >
       <Title className="mr-5 w-[200px] py-4">지원자격</Title>

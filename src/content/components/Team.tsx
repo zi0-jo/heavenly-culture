@@ -11,8 +11,10 @@ interface Props extends Department {
 
 export default function Team({ teams, className }: Props) {
   return (
-    <div className={`flex w-full items-start justify-center ${className}`}>
-      <Title className="mr-5 w-[200px]">팀소개</Title>
+    <div
+      className={`flex w-full flex-col items-start justify-center md:flex-row ${className}`}
+    >
+      <Title className="mr-5 w-[200px] py-4">팀소개</Title>
       <div
         className={`grid max-w-[650px] grid-cols-5 items-center gap-y-4 gap-x-3 rounded-md bg-black/50 p-4`}
       >
