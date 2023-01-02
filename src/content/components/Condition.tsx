@@ -8,7 +8,7 @@ interface Props extends Department {
   className?: string;
 }
 
-export default function Condition({ className }: Props) {
+export default function Condition({ condition, className }: Props) {
   useEffect(() => {
     setAnimation();
   }, []);
@@ -20,10 +20,9 @@ export default function Condition({ className }: Props) {
       <ul
         className={`text-md max-w-[650px] p-4 text-black [&>li]:mb-3 [&>li]:w-full [&>li]:rounded-full [&>li]:bg-yellow-400/80 [&>li]:py-2 [&>li]:px-5`}
       >
-        <li>공통: 신천지 하늘문화행사 스텝 1회 참석한 성도 </li>
-        <li>캐드 작업 가능자 및 관심 있는 성도 </li>
-        <li>엑셀, PPT 작업 가능자 및 관심 있는 성도</li>
-        <li>조명 및 미디어아트 경력자 및 관심 있는 성도</li>
+        {condition?.map(str => (
+          <li>{str}</li>
+        ))}
       </ul>
     </div>
   );
@@ -35,7 +34,7 @@ const setAnimation = () => {
       smoothChildTiming: true,
       scrollTrigger: {
         start: 'center bottom',
-        end: 'bottom center',
+        end: 'bottom 120',
         markers: true,
         scrub: true,
         trigger: '#condition-section',
@@ -45,7 +44,7 @@ const setAnimation = () => {
     .add('first')
     .fromTo(
       '#condition-section li',
-      { y: 50, opacity: 0 },
+      { y: 100, opacity: 0 },
       { y: 0, opacity: 1 },
     );
 };

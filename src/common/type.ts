@@ -7,4 +7,5 @@ export interface Department {
   phone?: string;
   images?: string[];
   teams?: Array<{ name: string; description: string }>;
+  condition?: string[];
 }
