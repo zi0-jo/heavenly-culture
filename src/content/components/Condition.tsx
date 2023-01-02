@@ -1,3 +1,4 @@
+import Title from 'common/components/Title';
 import { Department } from 'common/type';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -17,6 +18,7 @@ export default function Condition({ condition, className }: Props) {
       className={`flex w-full items-start justify-center ${className}`}
       id="condition-section"
     >
+      <Title className="mr-5 w-[200px] py-4">지원자격</Title>
       <ul
         className={`text-md max-w-[650px] p-4 text-black [&>li]:mb-3 [&>li]:w-full [&>li]:rounded-full [&>li]:bg-yellow-400/80 [&>li]:py-2 [&>li]:px-5`}
       >
@@ -34,8 +36,8 @@ const setAnimation = () => {
       smoothChildTiming: true,
       scrollTrigger: {
         start: 'center bottom',
-        end: 'bottom 120',
-        markers: true,
+        end: 'bottom 60%',
+        // markers: true,
         scrub: true,
         trigger: '#condition-section',
         scroller: '#content-container',
