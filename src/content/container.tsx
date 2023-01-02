@@ -1,6 +1,7 @@
 import { useData } from 'common/context/data';
 import { useEffect, useMemo, useRef } from 'react';
 import { useParams } from 'react-router-dom';
+import Condition from './components/Condition';
 import Footer from './components/Footer';
 import Intro from './components/Intro';
 import Team from './components/Team';
@@ -39,6 +40,7 @@ export default function Content() {
         <div className="px-5 md:px-10">
           <Intro {...content} className="h-screen" />
           {!!content.teams && <Team {...content} className="mb-[50%]" />}
+          <Condition {...content} className="mb-[50%]" />
           <Footer {...content} />
         </div>
       </div>
