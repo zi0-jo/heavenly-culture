@@ -36,7 +36,7 @@ const setAnimation = () => {
       smoothChildTiming: true,
       scrollTrigger: {
         start: 'center bottom',
-        end: 'bottom 60%',
+        end: 'bottom 65%',
         // markers: true,
         scrub: true,
         trigger: '#condition-section',
@@ -46,7 +46,7 @@ const setAnimation = () => {
     .add('first')
     .fromTo(
       '#condition-section li',
-      { y: 100, opacity: 0 },
+      { y: 200, opacity: 0 },
       { y: 0, opacity: 1 },
     );
 };

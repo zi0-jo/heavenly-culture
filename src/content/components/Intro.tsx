@@ -9,7 +9,7 @@ interface Props extends Department {
   className?: string;
 }
 
-export default function Intro({ bio, description, className }: Props) {
+export default function Intro({ name, bio, description, className }: Props) {
   useEffect(() => {
     setAnimation();
   }, []);
@@ -18,8 +18,13 @@ export default function Intro({ bio, description, className }: Props) {
       className={`flex h-[120vh] flex-col justify-center ${className ?? ''}`}
       id="intro-section"
     >
-      <p id="info-section-bio" className="mb-5 font-nanum text-3xl font-bold">
+      <p
+        id="info-section-bio"
+        className="mb-5 w-[75%] font-nanum text-3xl font-bold md:w-[55%]"
+      >
         {bio}
+        <br />
+        <div className="bg-orange-400/80 text-right text-black">{name}</div>
       </p>
       <p id="info-section-desc" className="whitespace-pre-line">
         {description}
