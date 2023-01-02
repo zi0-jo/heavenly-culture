@@ -40,10 +40,10 @@ export default function Content() {
         <div className="px-5 md:px-10">
           <Intro {...content} className="h-screen" />
           {!!content.teams && (
-            <Team {...content} className="mb-[200px] md:mb-[60%]" />
+            <Team {...content} className="mb-[250px] md:mb-[60%]" />
           )}
           {!!content.condition && (
-            <Condition {...content} className="mb-[200px] md:mb-[60%]" />
+            <Condition {...content} className="mb-[250px] md:mb-[60%]" />
           )}
           <Footer {...content} />
         </div>
