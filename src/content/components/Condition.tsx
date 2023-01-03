@@ -38,7 +38,7 @@ const setAnimation = () => {
       scrollTrigger: {
         start: 'center bottom',
         end: 'center center',
-        markers: true,
+        // markers: true,
         scrub: true,
         trigger: '#condition-section',
         scroller: '#content-container',
