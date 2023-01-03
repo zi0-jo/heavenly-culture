@@ -43,6 +43,10 @@ export default function DataProvider({ children }: PropsWithChildren<{}>) {
 export const useData = () => {
   const { data } = useContext(DataContext);
 
+  const getFirstData = useCallback(() => {
+    return data?.[0];
+  }, [data]);
+
   const getContentById = useCallback(
     (id: string) => {
       return data?.find(item => item.id === id);
@@ -53,6 +57,7 @@ export const useData = () => {
   return {
     data,
     getContentById,
+    getFirstData,
   };
 };
 

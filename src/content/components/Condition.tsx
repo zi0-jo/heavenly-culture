@@ -22,8 +22,8 @@ export default function Condition({ condition, className }: Props) {
       <ul
         className={`text-md max-w-[650px] p-4 text-black [&>li]:mb-3 [&>li]:w-full [&>li]:rounded-full [&>li]:bg-yellow-400/80 [&>li]:py-2 [&>li]:px-5`}
       >
-        {condition?.map(str => (
-          <li>{str}</li>
+        {condition?.map((str, index) => (
+          <li key={index}>{str}</li>
         ))}
       </ul>
     </div>

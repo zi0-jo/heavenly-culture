@@ -7,15 +7,15 @@ import Intro from './components/Intro';
 import Team from './components/Team';
 
 export default function Content() {
-  const { id = 'design' } = useParams();
-  const { getContentById } = useData();
+  const { id } = useParams();
+  const { getFirstData, getContentById } = useData();
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const content = useMemo(() => {
-    if (!id) return null;
+    if (!id) return getFirstData();
 
     return getContentById(id);
-  }, [id, getContentById]);
+  }, [id, getContentById, getFirstData]);
 
   useEffect(() => {
     containerRef.current?.scrollTo(0, 0);
