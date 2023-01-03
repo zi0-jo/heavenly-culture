@@ -36,7 +36,7 @@ const setAnimation = () => {
       smoothChildTiming: true,
       scrollTrigger: {
         start: 'center bottom',
-        end: 'bottom 65%',
+        end: 'bottom center',
         // markers: true,
         scrub: true,
         trigger: '#condition-section',
