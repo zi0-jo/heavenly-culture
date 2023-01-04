@@ -17,7 +17,7 @@ export default function Footer({ name, formUrl, phone }: Props) {
           onClose={() => setOpened(false)}
         />
       )}
-      <div className="fixed bottom-10 right-10 flex w-full items-end justify-end">
+      <div className="fixed bottom-10 right-10 z-10 flex w-full items-end justify-end">
         {!!phone && <Button onClick={() => setOpened(true)}>문의하기</Button>}
         <Button className="ml-3">
           <a href={formUrl} target="_blank" rel="noreferrer">

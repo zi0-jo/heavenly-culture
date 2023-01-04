@@ -43,7 +43,7 @@ const setAnimation = () => {
     .timeline({
       smoothChildTiming: true,
       scrollTrigger: {
-        start: 'center bottom',
+        start: 'top bottom',
         end: 'center center',
         // markers: true,
         scrub: true,

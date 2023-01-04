@@ -1,3 +1,4 @@
+import ScrollDown from 'common/components/ScrollDown.tsx';
 import { Department } from 'common/type';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -16,7 +17,9 @@ export default function Intro({ name, bio, description, className }: Props) {
 
   return (
     <div
-      className={`flex h-screen flex-col justify-center ${className ?? ''}`}
+      className={`relative flex h-screen flex-col justify-center ${
+        className ?? ''
+      }`}
       id="intro-section"
     >
       <div

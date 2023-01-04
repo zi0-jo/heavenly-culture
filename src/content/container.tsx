@@ -1,5 +1,7 @@
+import ScrollDown from 'common/components/ScrollDown.tsx';
 import { useData } from 'common/context/data';
-import { useEffect, useMemo, useRef } from 'react';
+import useIntersection from 'common/hook/useIntersection';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Condition from './components/Condition';
 import Footer from './components/Footer';
@@ -21,6 +23,20 @@ export default function Content() {
     containerRef.current?.scrollTo(0, 0);
   }, [content]);
 
+  const bottomEl = useRef<HTMLDivElement>(null);
+
+  const [hiddenScroll, setHiddenScroll] = useState<boolean>(false);
+
+  const handler = useCallback((entries: IntersectionObserverEntry[]) => {
+    if (entries[0].intersectionRatio >= 0.5) {
+      setHiddenScroll(true);
+    } else {
+      setHiddenScroll(false);
+    }
+  }, []);
+
+  useIntersection(bottomEl, handler, { threshold: [0.5] });
+
   return content ? (
     <div
       className="h-screen w-full overflow-hidden bg-cover bg-center bg-no-repeat"
@@ -33,7 +49,7 @@ export default function Content() {
       }
     >
       <div
-        className="h-screen w-full overflow-scroll bg-black/50"
+        className="relative h-screen w-full overflow-scroll bg-black/50"
         id="content-container"
         ref={containerRef}
       >
@@ -41,10 +57,16 @@ export default function Content() {
           <Intro {...content} className="h-screen" />
           {!!content.teams && <Team {...content} className="min-h-screen" />}
           {!!content.condition && (
-            <Condition {...content} className="min-h-screen" />
+            <Condition {...content} className="mb-[40%]" />
           )}
           <Footer {...content} />
         </div>
+
+        <div className="fixed bottom-0 flex h-[150px] w-full justify-center bg-gradient-to-t from-black md:w-[calc(100%-260px)]">
+          {!hiddenScroll && <ScrollDown className="mb-[70px]" />}
+        </div>
+
+        <div ref={bottomEl} className="order-2 h-1 w-full" />
       </div>
     </div>
   ) : null;

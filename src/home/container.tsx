@@ -1,9 +1,10 @@
 import Lottie from 'react-lottie-player/dist/LottiePlayerLight';
 import lottieJson from 'home/lottie/home.json';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router';
 import { useData } from 'common/context/data';
 import ScrollDown from 'common/components/ScrollDown.tsx';
+import useIntersection from 'common/hook/useIntersection';
 
 export default function Home() {
   const { data } = useData();
@@ -11,28 +12,26 @@ export default function Home() {
   const bottomEl = useRef<HTMLDivElement>(null);
   const scrollEl = useRef<HTMLDivElement>(null);
 
+  const handler = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      if (!data) {
+        return;
+      }
+
+      if (entries[0].intersectionRatio === 1) {
+        setTimeout(() => {
+          navigate(`/${data[0].id}`);
+        }, 1000);
+      }
+    },
+    [data, navigate],
+  );
+
+  useIntersection(bottomEl, handler, { threshold: 1 });
+
   useEffect(() => {
-    window.scrollTo(0, 0);
     scrollEl.current?.scrollTo(0, 0);
-    if (!bottomEl.current || !data) return;
-
-    const io = new IntersectionObserver(
-      entries => {
-        if (entries[0].intersectionRatio === 1) {
-          setTimeout(() => {
-            navigate(`/${data[0].id}`);
-          }, 1000);
-        }
-      },
-      { threshold: 1 },
-    );
-
-    io.observe(bottomEl.current);
-
-    return () => {
-      io.disconnect();
-    };
-  }, [data, navigate]);
+  }, []);
 
   return (
     <div className="w-full overflow-scroll" ref={scrollEl}>
