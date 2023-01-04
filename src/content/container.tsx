@@ -61,11 +61,7 @@ export default function Content() {
               <Condition {...content} className="pb-[30%]" />
             )}
           </div>
-          <Footer {...content} />
-        </div>
-
-        <div className="fixed bottom-0 flex h-[150px] w-full justify-center bg-gradient-to-t from-black md:w-[calc(100%-260px)]">
-          {!hiddenScroll && <ScrollDown className="mb-[70px]" />}
+          <Footer hiddenScroll={hiddenScroll} {...content} />
         </div>
 
         <div ref={bottomEl} className="order-2 h-1 w-full" />
