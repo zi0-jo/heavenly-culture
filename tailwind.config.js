@@ -10,7 +10,7 @@ module.exports = {
     extend: {
       borderWidth: n1_100,
       fontFamily: {
-        nanum: ['NanumBrush'],
+        nanum: ['Nanum Pen Script'],
       },
     },
   },

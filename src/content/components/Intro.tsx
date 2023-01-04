@@ -13,19 +13,19 @@ export default function Intro({ name, bio, description, className }: Props) {
   useEffect(() => {
     setAnimation();
   }, []);
+
   return (
     <div
-      className={`flex h-[120vh] flex-col justify-center ${className ?? ''}`}
+      className={`flex h-screen flex-col justify-center ${className ?? ''}`}
       id="intro-section"
     >
-      <p
+      <div
         id="info-section-bio"
-        className="mb-5 w-[75%] font-nanum text-3xl font-bold md:w-[55%]"
+        className="mb-5 w-[75%] font-nanum text-3xl md:w-[55%]"
       >
-        {bio}
-        <br />
+        <p>{bio}</p>
         <div className="bg-orange-400/80 text-right text-black">{name}</div>
-      </p>
+      </div>
       <p id="info-section-desc" className="whitespace-pre-line">
         {description}
       </p>

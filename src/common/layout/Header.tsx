@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Menu from './Menu';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const [opened, setOpened] = useState<boolean>(false);
@@ -21,7 +22,7 @@ export default function Header() {
         </button>
         <div className="order-3 w-[50px] md:hidden" />
         <header className="order-2 text-xl font-bold">
-          마태지파 하늘 문화부
+          <Link to="/">마태지파 하늘 문화부</Link>
         </header>
       </div>
       <div

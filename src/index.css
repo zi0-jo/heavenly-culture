@@ -11,7 +11,7 @@
 }
 
 @font-face {
-  font-family: 'NanumBrush', cursive;
+  font-family: 'Nanum Pen Script', cursive;
 }
 
 body {
@@ -19,9 +19,5 @@ body {
   font-family: 'GmarketSansMedium';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  @apply bg-black;
 }

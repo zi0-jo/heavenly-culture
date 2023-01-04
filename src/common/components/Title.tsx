@@ -1,8 +1,14 @@
-import { PropsWithChildren } from 'react';
+import { HTMLAttributes, PropsWithChildren } from 'react';
 
 export default function Title({
   children,
   className,
-}: PropsWithChildren<{ className?: string }>) {
-  return <h3 className={`text-3xl font-bold ${className}`}>{children}</h3>;
+  ...props
+}: PropsWithChildren<{ className?: string }> &
+  HTMLAttributes<HTMLHeadingElement>) {
+  return (
+    <h3 className={`text-3xl font-bold ${className}`} {...props}>
+      {children}
+    </h3>
+  );
 }
