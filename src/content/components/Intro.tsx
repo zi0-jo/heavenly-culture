@@ -22,11 +22,8 @@ export default function Intro({ name, bio, description, className }: Props) {
       }`}
       id="intro-section"
     >
-      <div
-        id="info-section-bio"
-        className="mb-5 w-[75%] font-nanum text-3xl md:w-[55%]"
-      >
-        <p>{bio}</p>
+      <div id="info-section-bio" className="mb-5 w-[75%] text-3xl md:w-[55%]">
+        <p className="mb-2">{bio}</p>
         <div className="bg-orange-400/80 text-right text-black">{name}</div>
       </div>
       <p id="info-section-desc" className="whitespace-pre-line">

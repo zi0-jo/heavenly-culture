@@ -20,7 +20,7 @@ export default function Team({ teams, className }: Props) {
       className={`flex w-full flex-col items-start justify-center md:flex-row ${className}`}
       id="team-section"
     >
-      <Title className="mr-5 w-[200px] py-4">팀소개</Title>
+      <Title className="mr-5 w-[200px] shrink-0 py-4">팀소개</Title>
       <div
         id="team-list"
         className={`grid max-w-[650px] grid-cols-5 items-center gap-y-4 gap-x-3 rounded-md bg-black/50 p-4`}
@@ -30,7 +30,9 @@ export default function Team({ teams, className }: Props) {
             <div className="col-span-2 flex items-start">
               <Tag>{team.name}</Tag>
             </div>
-            <div className="col-[3/-1]">{team.description}</div>
+            <div className="col-[3/-1] whitespace-pre-line">
+              {team.description}
+            </div>
           </Fragment>
         ))}
       </div>
