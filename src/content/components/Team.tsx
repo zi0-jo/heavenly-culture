@@ -27,7 +27,7 @@ export default function Team({ teams, className }: Props) {
       >
         {teams?.map(team => (
           <Fragment key={team.name}>
-            <div className="col-span-2 flex items-start">
+            <div className="col-span-2 flex items-start self-stretch">
               <Tag>{team.name}</Tag>
             </div>
             <div className="col-[3/-1] whitespace-pre-line">
