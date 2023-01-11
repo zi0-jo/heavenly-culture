@@ -55,10 +55,12 @@ export default function Content() {
       >
         <div className="px-5 md:px-10">
           <Intro {...content} className="h-screen" />
-          <div className="min-h-[130vh]">
-            {!!content.teams && <Team {...content} className="pb-[30%]" />}
+          <div className="min-h-[110vh]">
+            {!!content.teams && (
+              <Team {...content} className="pb-[120px] md:pb-[30%]" />
+            )}
             {!!content.conditions && (
-              <Condition {...content} className="pb-[30%]" />
+              <Condition {...content} className="pb-[200px] md:pb-[30%]" />
             )}
           </div>
           <Footer hiddenScroll={hiddenScroll} {...content} />
